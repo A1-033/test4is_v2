@@ -4,18 +4,17 @@
   "title": "My Block",
   "category": "text",
   "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "description": "Example block with dynamic rendering.",
   "textdomain": "myblock",
-  "editorScript": "file:./index.js",
+  "editorScript": "file:./build/index.js",
   "render": "file:./render.php",
   "attributes": {
-    "postType": {
+    "selectedCategory": {
       "type": "string",
-      "default": "post"
+      "default": "all"
     }
   },
   "supports": {
     "html": false
   }
 }
-

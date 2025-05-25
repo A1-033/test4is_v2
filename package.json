@@ -2,7 +2,7 @@
   "name": "myblock",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start"
@@ -10,8 +10,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.7.0"
+  },
   "dependencies": {
-    "@wordpress/scripts": "^30.17.0"
+    "@wordpress/block-editor": "^14.19.0",
+    "@wordpress/blocks": "^14.13.0",
+    "swiper": "^11.2.8"
   }
 }

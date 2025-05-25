@@ -6,33 +6,44 @@
  */
 
 
-<?php
-function myblock_render_callback($attributes) {
-    $cat = sanitize_text_field($attributes['category']);
+function myblock_render_callback($attributes)
+{
+    $selected_category = $attributes['selectedCategory'] ?? 'all';
 
     $args = array(
         'post_type' => 'post',
         'posts_per_page' => 5,
     );
 
-    if ($cat !== 'all') {
-        $args['category_name'] = $cat;
+    if ($selected_category !== 'all') {
+        $args['category_name'] = $selected_category;
     }
 
     $query = new WP_Query($args);
 
     ob_start();
-    echo '<div class="swiper">';
-    echo '<div class="swiper-wrapper">';
+    if ($query->have_posts()) {
+        echo '<div class="myblock-slider">';
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            echo '<div class="swiper-slide">';
 
-    while ($query->have_posts()) {
-        $query->the_post();
-        echo '<div class="swiper-slide">';
-        echo '<h4>' . get_the_title() . '</h4>';
+            // Выводим изображение поста (миниатюру)
+            if ( has_post_thumbnail() ) {
+                echo get_the_post_thumbnail( get_the_ID(), 'medium', [ 'class' => 'post-thumbnail' ] );
+            }
+
+            echo '<h3>' . get_the_title() . '</h3>';
+            echo '<p>' . get_the_excerpt() . '</p>';
+            echo '</div>';
+        }
         echo '</div>';
+        wp_reset_postdata();
+    } else {
+        echo '<p>Посты не найдены.</p>';
     }
-
-    echo '</div></div>'; // .swiper-wrapper, .swiper
-    wp_reset_postdata();
     return ob_get_clean();
 }
+
+
+

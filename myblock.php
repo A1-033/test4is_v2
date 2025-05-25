@@ -1,13 +1,11 @@
 <?php
-
-<?php
 /**
- * Plugin Name: My Block
- * Description: Gutenberg block with PHP render
- * Author: I
+ * Plugin Name: my Block
+ * Description: Gutenberg block
  */
 
-function myblock_register_block() {
-    register_block_type_from_metadata(__DIR__);
+function myblock_init() {
+    register_block_type( __DIR__ );
 }
-add_action('init', 'myblock_register_block');
+add_action( 'init', 'myblock_init' );
+
