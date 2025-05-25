@@ -1,0 +1,21 @@
+{
+  "apiVersion": 2,
+  "name": "a1tr/myblock",
+  "title": "My Block",
+  "category": "text",
+  "icon": "smiley",
+  "description": "Example block scaffolded with Create Block tool.",
+  "textdomain": "myblock",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "post"
+    }
+  },
+  "supports": {
+    "html": false
+  }
+}
+
