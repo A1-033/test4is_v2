@@ -1,7 +1,7 @@
 <?php
 
 if (!function_exists('myblock_render_callback')){
-    phpinfo();
+
     function myblock_render_callback($attributes)
     {
         $selected_category = $attributes['selectedCategory'] ?? 'all';
