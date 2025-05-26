@@ -4,8 +4,9 @@
  * Description: Gutenberg block
  */
 
-function myblock_init() {
-    register_block_type( __DIR__ );
+function block_init() {
+    register_block_type_from_metadata(__DIR__);
 }
-add_action( 'init', 'myblock_init' );
+add_action('init', 'block_init');
+
 
