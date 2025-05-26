@@ -16,6 +16,9 @@
   "dependencies": {
     "@wordpress/block-editor": "^14.19.0",
     "@wordpress/blocks": "^14.13.0",
+    "@wordpress/components": "^29.10.0",
+    "@wordpress/data": "^10.24.0",
+    "@wordpress/element": "^6.24.0",
     "swiper": "^11.2.8"
   }
 }

@@ -1,11 +1,7 @@
 <?php
-/**
- * Рендеринг блока на фронтенде.
- *
- * @param array $attributes Атрибуты блока.
- */
 
-if (!function_exists('myblock_render_callback')) {
+if (!function_exists('myblock_render_callback')){
+    phpinfo();
     function myblock_render_callback($attributes)
     {
         $selected_category = $attributes['selectedCategory'] ?? 'all';

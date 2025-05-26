@@ -8,6 +8,7 @@
   "textdomain": "myblock",
   "editorScript": "file:./build/index.js",
   "render": "file:./render.php",
+  "renderCallback": "myblock_render_callback",
   "attributes": {
     "selectedCategory": {
       "type": "string",
